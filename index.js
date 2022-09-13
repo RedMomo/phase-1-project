@@ -18,17 +18,37 @@ const renderBooks = (book) => {
 
     bookCard.addEventListener("mouseover", showCard)
     bookCard.addEventListener("mouseleave", blurCard)
-
     };
 
     function showCard() {
         this.classList.add("active")
     }
-    
     function blurCard() {
         this.classList.remove("active")
     }
 });
 
 
-//transition functions
+//search bar
+let searchBar = document.getElementById("search-bar")
+searchBar.innerText = "Find Books!"
+// searchBar.addEventListener("click", () )
+
+
+//book generating button
+let surpriseMe = document.getElementById("surprise-me")
+surpriseMe.innerText = "Surprise Me!"
+// surpriseMe.addEventListener("click", () =>
+//      
+
+//the equation for the loop?
+// for (i = 0; i < li.length; i++) {
+//     a = li[i].getElementsByTagName("a")[0];
+//     txtValue = a.textContent || a.innerText;
+//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//       li[i].style.display = "";
+//     } else {
+//       li[i].style.display = "none";
+//     }
+//   }
+// }
