@@ -20,14 +20,15 @@ const renderBooks = (book) => {
     bookCard.addEventListener("mouseleave", blurCard)
 
     };
+
+    function showCard() {
+        this.classList.add("active")
+    }
+    
+    function blurCard() {
+        this.classList.remove("active")
+    }
 });
 
 
 //transition functions
-function showCard() {
-    this.classList.add(".active")
-}
-
-function showCard() {
-    this.classList.remove(".active")
-}
