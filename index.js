@@ -30,9 +30,17 @@ const renderBooks = (book) => {
 
 
 //search bar
-let searchBar = document.getElementById("search-bar")
-searchBar.innerText = "Find Books!"
-// searchBar.addEventListener("click", () )
+let searchBar = document.getElementById("search-form")
+searchBar.addEventListener("submit", (e) => {
+    e.preventDefault()
+    e.target[0].value
+    console.log(e.target[0].value)
+    fetch("http://localhost:3000/books",
+        method:
+        headers:
+    )
+})
+
 
 
 //book generating button
