@@ -1,24 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("http://localhost:3000/books")
-.then(res => res.json())
-.then(books => {
-    console.log(books, 'Fetching books!')
+    let searchBar = document.getElementById("search-form")
+    searchBar.addEventListener("submit", (e) => {
+        e.preventDefault()
+        e.target[0].value
+        console.log(e.target[0].value)
 
-    books.forEach(book => {
-        renderBooks(book)
-    })
-});
+        fetch("http://localhost:3000/books")
+        .then(res => res.json())
+        .then(books => {
+        console.log(books, 'Fetching books!')
+        
+        books.forEach(book => {
+            renderBooks(book)  
+        })
+        
+    });
 
 const renderBooks = (book) => {
+// for (let i = 0; i < 3; i++) {
+
     let bookContainer = document.getElementById("book-container")
     let bookCard = document.createElement("div")
     bookCard.classList.add("card")
     bookCard.innerText = book.title
     bookContainer.append(bookCard)
-
+    
     bookCard.addEventListener("mouseover", showCard)
     bookCard.addEventListener("mouseleave", blurCard)
-    
     };
 
     function showCard() {
@@ -26,23 +34,23 @@ const renderBooks = (book) => {
     }
     function blurCard() {
         this.classList.remove("active")
-    }
-
-    
-});
+    }   
+// }
+})
+})
 
 
 //search bar
-let searchBar = document.getElementById("search-form")
-searchBar.addEventListener("submit", (e) => {
-    e.preventDefault()
-    e.target[0].value
-    console.log(e.target[0].value)
+// let searchBar = document.getElementById("search-form")
+// searchBar.addEventListener("submit", (e) => {
+//     e.preventDefault()
+//     e.target[0].value
+//     console.log(e.target[0].value)
     // fetch("http://localhost:3000/books",
     //     method: "GET"
     //     headers: 
     // )
-})
+// })
 
 
 
@@ -66,17 +74,9 @@ surpriseMe.addEventListener("click", (e) => {
     })
 
 
-//the equation for the loop?
-// for (i = 0; i < li.length; i++) {
-//     a = li[i].getElementsByTagName("a")[0];
-//     txtValue = a.textContent || a.innerText;
-//     if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//       li[i].style.display = "";
-//     } else {
-//       li[i].style.display = "none";
-
-//     }
-//   }
+// the equation for the loop?
+// for (let i = 0; i < 3; i++) {
+//      console.log();
 // }
 
 
