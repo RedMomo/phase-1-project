@@ -1,18 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() { //asynch question: do I need "load" because of how massive the api is?
-    fetch("https://openlibrary.org/subjects/fiction.json?details=true") //might need to adjust link 
-    .then(res => res.json())
-    .then(books => {
-        console.log(books, 'Fetching books!')
-    
-        books.forEach(book => {
-            renderBooks(book)
-        })
-    
-    const renderBooks = (subject) => { 
-        const bookContainer = document.getElementById("container")
-        const bookCard = document.getElementByClass("card")
-        bookCard.innerText = subject.title
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("http://localhost:3000/books")
+.then(res => res.json())
+.then(books => {
+    console.log(books, 'Fetching books!')
 
+    books.forEach(book => {
+        renderBooks(book)
     })
-    });
+});
+
+const renderBooks = (book) => {
+    let bookContainer = document.getElementById("book-container")
+    let bookCard = document.createElement("div")
+    bookCard.classList.add("card")
+    bookCard.innerText = book.title
+    bookContainer.append(bookCard)
+
+    bookCard.addEventListener("mouseover", showCard)
+    bookCard.addEventListener("mouseleave", blurCard)
+
+    };
+});
+
+
+//transition functions
+function showCard() {
+    this.classList.add(".active")
+}
+
+function showCard() {
+    this.classList.remove(".active")
+}
