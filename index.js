@@ -6,6 +6,7 @@ surpriseMe.addEventListener("click", () => {
     .then(res => res.json())
     .then(beers => {
         console.log(beers[0].name, beers[0].description)
+        const randomBeerContainer = document.getElementById("random-beer-container").innerHTML = ""
         beers.forEach(beer => {
             randomBeers(beers) 
             
@@ -31,9 +32,18 @@ let searchBar = document.getElementById("search-form")
 searchBar.addEventListener("submit", (e) => {
     e.preventDefault()
     console.log(e.target[0].value)
+    let beerContainer = document.getElementById("beer-container").innerHTML = ""
+
+    let url = "https://api.punkapi.com/v2/beers"
+    //let searchBeer = `https://api.punkapi.com/v2/beers?beer_name=`
+
+
+    if (e.target[0].value !== "" ){
+        url = `https://api.punkapi.com/v2/beers?beer_name=${e.target[0].value}`
+    }
     
 
-    fetch("https://api.punkapi.com/v2/beers/")
+    fetch(url)
     .then(res => res.json())
     .then(beers => {
     console.log(beers, 'Fetching the beers!')
