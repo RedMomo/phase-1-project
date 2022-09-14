@@ -2,7 +2,12 @@
     font-family: "Courier New", monospace;
 }
 
-#book-container {
+#beer-container {
+    display: flex;
+    justify-content: center;
+}
+
+#random-beer-container {
     display: flex;
     justify-content: center;
 }
