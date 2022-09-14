@@ -1,32 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let searchBar = document.getElementById("search-form")
-    searchBar.addEventListener("submit", (e) => {
-        e.preventDefault()
-        e.target[0].value
-        console.log(e.target[0].value)
-
-        fetch("http://localhost:3000/books")
-        .then(res => res.json())
-        .then(books => {
-        console.log(books, 'Fetching books!')
+    fetch("http://localhost:3000/books")
+    .then(res => res.json())
+    .then(books => {
+    console.log(books, 'Fetching books!')
+    
+    books.forEach(book => {
+        renderBooks(book)
         
-        books.forEach(book => {
-            renderBooks(book)  
-        })
-        
-    });
+    })
+    
+});
 
 const renderBooks = (book) => {
-// for (let i = 0; i < 3; i++) {
-
     let bookContainer = document.getElementById("book-container")
     let bookCard = document.createElement("div")
     bookCard.classList.add("card")
     bookCard.innerText = book.title
     bookContainer.append(bookCard)
-    
+
     bookCard.addEventListener("mouseover", showCard)
     bookCard.addEventListener("mouseleave", blurCard)
+    
     };
 
     function showCard() {
@@ -34,23 +28,23 @@ const renderBooks = (book) => {
     }
     function blurCard() {
         this.classList.remove("active")
-    }   
-// }
-})
-})
+    }
+
+    
+});
 
 
 //search bar
-// let searchBar = document.getElementById("search-form")
-// searchBar.addEventListener("submit", (e) => {
-//     e.preventDefault()
-//     e.target[0].value
-//     console.log(e.target[0].value)
+let searchBar = document.getElementById("search-form")
+searchBar.addEventListener("submit", (e) => {
+    e.preventDefault()
+    e.target[0].value
+    console.log(e.target[0].value)
     // fetch("http://localhost:3000/books",
     //     method: "GET"
     //     headers: 
     // )
-// })
+})
 
 
 
