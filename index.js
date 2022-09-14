@@ -1,4 +1,15 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function(searchBarEvent) {
+let searchBar = document.getElementById("search-form")
+searchBar.addEventListener("submit", (e) => {
+    e.preventDefault()
+    e.target[0].value
+    console.log(e.target[0].value)
+    // fetch("http://localhost:3000/books",
+    //     method: "GET"
+    //     headers: 
+    // )
+
+
     fetch("http://localhost:3000/books")
     .then(res => res.json())
     .then(books => {
@@ -9,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
     })
     
+})
 });
 
 const renderBooks = (book) => {
@@ -35,16 +47,6 @@ const renderBooks = (book) => {
 
 
 //search bar
-let searchBar = document.getElementById("search-form")
-searchBar.addEventListener("submit", (e) => {
-    e.preventDefault()
-    e.target[0].value
-    console.log(e.target[0].value)
-    // fetch("http://localhost:3000/books",
-    //     method: "GET"
-    //     headers: 
-    // )
-})
 
 
 
