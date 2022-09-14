@@ -3,10 +3,10 @@ let surpriseMe = document.getElementById("surprise-me")
 surpriseMe.innerText = "Surprise Me!"
 surpriseMe.addEventListener("click", (e) => {
     e.preventDefault()
-    fetch("http://localhost:3000/books")
+    fetch("https://api.punkapi.com/v2/beers/random")
     .then(res => res.json())
-    .then(books => {
-        console.log(books[0].title, books[0].author, books[0].description)
+    .then(beers => {
+        console.log(beers[0].name, beers[0].description)
     })
         })
 
@@ -16,35 +16,35 @@ searchBar.addEventListener("submit", (e) => {
     e.preventDefault()
     e.target[0].value
     console.log(e.target[0].value)
-    // fetch("http://localhost:3000/books")
-    // books.map(book => {
+    // fetch("https://api.punkapi.com/v2/beers")
+    // books.map(beers => {
         
     // })
 
 
-    fetch("http://localhost:3000/books")
+    fetch("https://api.punkapi.com/v2/beers")
     .then(res => res.json())
-    .then(books => {
-    // console.log(books, 'Fetching books!')
+    .then(beers => {
+    console.log(beers, 'Fetching the wench!')
     
-    books.forEach(book => {
-        renderBooks(book)
+    beers.forEach(beer => {
+        renderBeers(beer)
         
     })
     
 })
 });
 
-const renderBooks = (book) => {
+const renderBeers = (beer) => {
     // for(let i=0 ;i < 3 ; i++){
-    let bookContainer = document.getElementById("book-container")
-    let bookCard = document.createElement("div")
-    bookCard.classList.add("card")
-    bookCard.innerText = book.title
-    bookContainer.append(bookCard)
+    let beerContainer = document.getElementById("beer-container")
+    let beerCard = document.createElement("div")
+    beerCard.classList.add("card")
+    beerCard.innerText = beer.name
+    beerContainer.append(beerCard)
 
-    bookCard.addEventListener("mouseover", showCard)
-    bookCard.addEventListener("mouseleave", blurCard)
+    beerCard.addEventListener("mouseover", showCard)
+    beerCard.addEventListener("mouseleave", blurCard)
     
     // }
     };
@@ -58,31 +58,4 @@ const renderBooks = (book) => {
 
     
 });
-
-
-
-// book generating button
-// let surpriseMe = document.getElementById("surprise-me")
-// surpriseMe.innerText = "Surprise Me!"
-// surpriseMe.addEventListener("click", (e) => {
-//     e.preventDefault()
-//     fetch("http://localhost:3000/books")
-//     .then(res => res.json())
-//     .then(books => {
-//         console.log(books.title, books.author, books.description)
-// })
-//     })
-
-
-// the equation for the loop?
-// for(let i=0 ;i < 3 ; i++){
-//     
-//  }
-
-
-
-
-
-
-
 
