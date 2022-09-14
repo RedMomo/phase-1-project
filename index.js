@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 let surpriseMe = document.getElementById("surprise-me")
 surpriseMe.innerText = "Surprise Me!"
-surpriseMe.addEventListener("click", (e) => {
-    e.preventDefault()
-    
-    
+surpriseMe.addEventListener("click", () => {
     fetch("https://api.punkapi.com/v2/beers/random")
     .then(res => res.json())
     .then(beers => {
@@ -19,8 +16,10 @@ surpriseMe.addEventListener("click", (e) => {
     const randomBeerContainer = document.getElementById("random-beer-container")
     const randomBeerCard = document.createElement("div")
         randomBeerCard.classList.add("random-beer-card")
-        randomBeerCard.innerText = beer[0].name
+        randomBeerCard.innerText = beer[0].name + beer[0].description
         randomBeerContainer.append(randomBeerCard)
+        
+        
         
 
         randomBeerCard.addEventListener("mouseover", showCard)
