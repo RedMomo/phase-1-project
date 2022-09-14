@@ -18,6 +18,17 @@
     transition: all 0.3s ease-in-out;
   }
 
+.random-beer-card {
+    height: 200px;
+    width: 290px;
+    box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
+    border-radius: 5px; 
+    text-align: center;
+    opacity: 0.3;
+    transform: scale(0.8, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
 .active {
     opacity: 1;
     transform: scale(1, 1);
