@@ -1,30 +1,46 @@
 * {
-    font-family: "Courier New", monospace;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#surprise-me {}
+.navigation-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    background-color: #98e8d8;
+  }
 
-#search-form {}
+.header {
+    padding: 10px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 25px;
+  }
 
-#beer-container {
-    display: flex;
-    justify-content: center;
+#surprise-me {
+    float: right;
+}
+    
+#search-form {
+    float: left;
 }
 
 #random-beer-container {
     display: flex;
     justify-content: center;
+    padding-top: 15px
 }
 
 .card {
-    height: 400px;
-    width: 290px;
+    height: 600px;
+    width: 400px;
     box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
     border-radius: 5px; 
     text-align: center;
-    opacity: 0.2;
+    opacity: 0.4;
     transform: scale(0.8, 0.8);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    
   }
 
 .random-beer-card {
@@ -33,10 +49,16 @@
     box-shadow: 0 4px 8px 2px rgba(0,0,0,0.2);
     border-radius: 5px; 
     text-align: center;
-    opacity: 0.2;
+    opacity: 0.4;
     transform: scale(0.8, 0.8);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
+
+
+
+/* .random-beer-image {
+
+} */
 
 .active {
     opacity: 1;

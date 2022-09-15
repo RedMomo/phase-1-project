@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
+const randomBeerContainer = document.getElementById("random-beer-container")
 let surpriseMe = document.getElementById("surprise-me")
-surpriseMe.innerText = "Surprise Me!"
+surpriseMe.innerText = "Prost!"
 surpriseMe.addEventListener("click", () => {
     fetch("https://api.punkapi.com/v2/beers/random")
     .then(res => res.json())
     .then(beers => {
-        console.log(beers[0].name, beers[0].description)
         const randomBeerContainer = document.getElementById("random-beer-container").innerHTML = ""
         beers.forEach(beer => {
             randomBeers(beers) 
@@ -14,13 +14,17 @@ surpriseMe.addEventListener("click", () => {
     })
 
     let randomBeers = (beer) => {
-    const randomBeerContainer = document.getElementById("random-beer-container")
+    
     const randomBeerCard = document.createElement("div")
         randomBeerCard.classList.add("random-beer-card")
-        randomBeerCard.innerText = beer[0].name + beer[0].description
+        // randomBeerCard.innerText = beer[0].name + beer[0].description
+
+    const randomBeerImage = document.createElement("img")
+        randomBeerImage.classList.add("random-beer-image")
+        randomBeerImage.src = "download.jpg"
+
+        randomBeerCard.append(randomBeerImage)
         randomBeerContainer.append(randomBeerCard)
-        
-        
         
 
         randomBeerCard.addEventListener("mouseover", showCard)
@@ -32,7 +36,8 @@ let searchBar = document.getElementById("search-form")
 searchBar.addEventListener("submit", (e) => {
     e.preventDefault()
     console.log(e.target[0].value)
-    let beerContainer = document.getElementById("beer-container").innerHTML = ""
+    // let beerContainer = document.getElementById("beer-container").innerHTML = ""
+    randomBeerContainer.innerHTML = ""
 
     let url = "https://api.punkapi.com/v2/beers"
     //let searchBeer = `https://api.punkapi.com/v2/beers?beer_name=`
@@ -57,11 +62,11 @@ searchBar.addEventListener("submit", (e) => {
 });
 
 const renderBeers = (beer) => {
-    let beerContainer = document.getElementById("beer-container")
+    // let beerContainer = document.getElementById("beer-container")
     let beerCard = document.createElement("div")
     beerCard.classList.add("card")
     beerCard.innerText = beer.name
-    beerContainer.append(beerCard)
+    randomBeerContainer.append(beerCard)
     
 
     beerCard.addEventListener("mouseover", showCard)
