@@ -63,9 +63,9 @@ const renderBeers = (beer) => {
     beerContainer.append(beerCard)
 
 // the below code doesnt work. 
-    let beerImg = document.createElement('img')
-             beerImg.src = beer.image_url
-             beerImg.append(randomBeerCard)
+    // let beerImg = document.createElement('img')
+    //          beerImg.src = beer.image_url
+    //          beerImg.append(randomBeerCard)
 
 
 // const imageContainer = document.createElement('div')
