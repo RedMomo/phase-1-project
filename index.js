@@ -6,6 +6,10 @@ surpriseMe.addEventListener("click", () => {
     fetch("https://api.punkapi.com/v2/beers/random")
     .then(res => res.json())
     .then(beers => {
+<<<<<<< HEAD
+=======
+        console.log(beers[0].name, beers[0].description, beers[0].image_url)
+>>>>>>> 46676cef1bdbafb016f037bfa35684fd47c02153
         const randomBeerContainer = document.getElementById("random-beer-container").innerHTML = ""
         beers.forEach(beer => {
             randomBeers(beers) 
@@ -61,13 +65,31 @@ searchBar.addEventListener("submit", (e) => {
 })
 });
 
+
 const renderBeers = (beer) => {
     // let beerContainer = document.getElementById("beer-container")
     let beerCard = document.createElement("div")
     beerCard.classList.add("card")
     beerCard.innerText = beer.name
+<<<<<<< HEAD
     randomBeerContainer.append(beerCard)
     
+=======
+    beerContainer.append(beerCard)
+
+// the below code doesnt work. 
+    // let beerImg = document.createElement('img')
+    //          beerImg.src = beer.image_url
+    //          beerImg.append(randomBeerCard)
+
+
+// const imageContainer = document.createElement('div')
+//      imageContainer.classList.add('image-container')
+//     const imageElemenet = document.createElement('img')
+//      imageElemenet.setAttribute(beer.image_url)
+//     imageContainer.append(card)
+
+>>>>>>> 46676cef1bdbafb016f037bfa35684fd47c02153
 
     beerCard.addEventListener("mouseover", showCard)
     beerCard.addEventListener("mouseleave", blurCard)
