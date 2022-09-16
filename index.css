@@ -5,7 +5,7 @@
 .navigation-bar {
     list-style-type: none;
     margin: 0;
-    padding: 20px;
+    padding: 25px;
     background-color: #98e8d8;
   }
 
@@ -54,11 +54,15 @@
     transition: all 0.2s ease-in-out;
 }
 
+.beer-image {
+    position: relative; 
+    float: bottom;
+}
 
-
-/* .random-beer-image {
-
-} */
+.random-beer-image {
+    position: relative; 
+    float: top;
+}
 
 .active {
     opacity: 1;

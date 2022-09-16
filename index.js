@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         
         const randomBeerCard = document.createElement("div")
             randomBeerCard.classList.add("random-beer-card")
-            // randomBeerCard.innerText = beer[0].name + beer[0].description
-    
+            randomBeerCard.innerText = beer[0].name + " - " + beer[0].description
+     
         const randomBeerImage = document.createElement("img")
             randomBeerImage.classList.add("random-beer-image")
-            randomBeerImage.src = "download.jpg"
+            randomBeerImage.src = "icon.png"
     
             randomBeerCard.append(randomBeerImage)
             randomBeerContainer.append(randomBeerCard)
@@ -65,8 +65,14 @@ document.addEventListener("DOMContentLoaded", function() {
         // let beerContainer = document.getElementById("beer-container")
         let beerCard = document.createElement("div")
         beerCard.classList.add("card")
-        beerCard.innerText = beer.name
+        beerCard.innerText = beer.name + " - " + beer.description
         randomBeerContainer.append(beerCard)
+
+        const beerImage = document.createElement("img")
+            beerImage.classList.add("beer-image")
+            beerImage.src = "icon.png"
+            beerCard.append(beerImage)
+        // randomBeerContainer.append(beerCard)
         
     
         beerCard.addEventListener("mouseover", showCard)
