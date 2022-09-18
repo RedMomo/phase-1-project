@@ -26,9 +26,9 @@
 }
 
 #random-beer-container {
-    display: flex;
+    display: grid;
     justify-content: center;
-    padding-top: 15px
+    padding-top: 15px;
 }
 
 .card {
