@@ -1,7 +1,7 @@
 # Phase-1 Final Project: Beer Recommender
 
-## Application Pitch
-We will be creating a basic beer recommending application. Users will search for a beer feature (i.e.: genre) and the application will return three recommendations, selected at random from the API. Alternatively, the user can press a "surprise me!" button that will return a recommendation completely at random. 
+## Application
+"The Beer Garden" is a basic beer recommending application: users will search via the searchbar and the application will return beers and associated food pairings. Alternatively, the user can press a "prost!" button that will return recommendations completely at random. 
 
 ## MVP Core Features
 
@@ -12,7 +12,7 @@ The application will be a HTML/CSS/JS frontend that accesses data from a public 
 The application will utilize three unique event-listeners:
 
 #### Mouse Events: 
-The user will be able to interact with the application by mouse-clicking buttons and hovering over recommendations with their mouse. They will click on buttons that generate beer recommendations. When they hover their mouse over the recommendations, the recommendations will transition from greyed out to clear.   
+The user will be able to interact with the application with "click" and "hover" events. Buttons generate beer cards, which are cards displaying information about the beer. When clicked, they flip over and reveal more information about the beer. When they hover their mouse over the cards, the recommendations will transition from greyed out to color.
 
 #### CSS Transition: 
 Recommendations will appear as faded cards until the mouse pointer hovers over the card. Then, the card will fade into view.
@@ -34,3 +34,4 @@ Over the course of this project, we will have to work together to figure out how
 
 ## On Meeting Requirements
 To meet the requirements, we will communicate virtually (through phone, text, and facetime) to divide up research tasks. Then, we will structure and implement the code via pair programming, where one is the driver and the other is the navigator for that session. # phase-1-project
+# Beer-Generator
